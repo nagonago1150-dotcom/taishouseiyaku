@@ -42,7 +42,7 @@ body {
 
 /* ヒーローセクション */
 .hero-section {
-    background: linear-gradient(135deg, #1a365d 0%, #2d3748 30%, #1a202c 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 30%, #3b82f6 60%, #1e3a8a 100%);
     color: white;
     padding: 120px 0;
     text-align: center;
@@ -58,8 +58,21 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.05) 50%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffd700" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+    opacity: 0.3;
     pointer-events: none;
 }
 
@@ -76,12 +89,13 @@ body {
 }
 
 .hero-title .highlight {
-    background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b);
+    background: linear-gradient(45deg, #ffd700, #ffed4e, #fbbf24);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
     display: inline-block;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 .hero-title .highlight::after {
@@ -90,9 +104,10 @@ body {
     bottom: -5px;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(45deg, #d4af37, #ffd700);
-    border-radius: 1px;
+    height: 3px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e, #fbbf24);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .hero-subtitle {
@@ -139,22 +154,24 @@ body {
 }
 
 .cta-button {
-    background: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #b8860b 100%);
-    color: #1a1a1a;
-    border: none;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #fbbf24 100%);
+    color: #1e3a8a;
+    border: 2px solid #ffd700;
     padding: 22px 45px;
     border-radius: 60px;
     font-family: 'Inter', sans-serif;
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.4s ease;
     box-shadow: 
-        0 15px 35px rgba(212, 175, 55, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        0 15px 35px rgba(255, 215, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 215, 0, 0.3);
     letter-spacing: 0.02em;
     position: relative;
     overflow: hidden;
+    text-transform: uppercase;
 }
 
 .cta-button::before {
@@ -164,7 +181,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     transition: left 0.6s ease;
 }
 
@@ -175,8 +192,10 @@ body {
 .cta-button:hover {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 
-        0 20px 45px rgba(212, 175, 55, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        0 20px 45px rgba(255, 215, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 215, 0, 0.4);
+    border-color: #ffed4e;
 }
 
 /* アンケートセクション */
@@ -200,7 +219,7 @@ body {
     text-align: center;
     font-family: 'Noto Serif JP', serif;
     font-size: 2.8rem;
-    color: #1a365d;
+    color: #1e3a8a;
     margin-bottom: 30px;
     font-weight: 700;
     letter-spacing: 0.03em;
@@ -215,8 +234,9 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #d4af37, #ffd700, #b8860b);
+    background: linear-gradient(90deg, #ffd700, #ffed4e, #fbbf24);
     border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .section-subtitle {
@@ -258,8 +278,9 @@ body {
     top: 0;
     bottom: 0;
     width: 5px;
-    background: linear-gradient(180deg, #d4af37, #ffd700, #b8860b);
+    background: linear-gradient(180deg, #ffd700, #ffed4e, #fbbf24);
     border-radius: 20px 0 0 20px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
 }
 
 .question-block:hover {
@@ -270,7 +291,7 @@ body {
 }
 
 .question-title {
-    color: #1a365d;
+    color: #1e3a8a;
     font-family: 'Noto Serif JP', serif;
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -326,7 +347,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
     transition: left 0.6s ease;
 }
 
@@ -335,10 +356,10 @@ body {
 }
 
 .option:hover {
-    border-color: #d4af37;
-    background: linear-gradient(135deg, #fff9e6 0%, #f7f1d3 100%);
+    border-color: #ffd700;
+    background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
     transform: translateX(5px);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
 }
 
 .option input[type="checkbox"],
@@ -367,15 +388,15 @@ body {
 }
 
 .option input[type="checkbox"]:checked + .checkmark {
-    background: linear-gradient(135deg, #d4af37, #ffd700);
-    border-color: #d4af37;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
 .option input[type="radio"]:checked + .radiomark {
-    background: linear-gradient(135deg, #d4af37, #ffd700);
-    border-color: #d4af37;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
 .checkmark::after {
@@ -424,22 +445,24 @@ body {
 }
 
 .submit-button {
-    background: linear-gradient(135deg, #1a365d 0%, #2d3748 50%, #1a202c 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
     color: white;
-    border: none;
+    border: 2px solid #ffd700;
     padding: 25px 60px;
     border-radius: 60px;
     font-family: 'Inter', sans-serif;
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.4s ease;
     box-shadow: 
-        0 15px 35px rgba(26, 54, 93, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 15px 35px rgba(30, 58, 138, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 0 20px rgba(255, 215, 0, 0.2);
     letter-spacing: 0.02em;
     position: relative;
     overflow: hidden;
+    text-transform: uppercase;
 }
 
 .submit-button::before {
@@ -449,7 +472,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
     transition: left 0.6s ease;
 }
 
@@ -460,8 +483,10 @@ body {
 .submit-button:hover {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 
-        0 20px 45px rgba(26, 54, 93, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        0 20px 45px rgba(30, 58, 138, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(255, 215, 0, 0.3);
+    border-color: #ffed4e;
 }
 
 /* 診断結果セクション */
