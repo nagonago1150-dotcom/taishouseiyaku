@@ -3,85 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KALCALA - あなたにぴったりの商品を見つけよう</title>
-    <meta name="description" content="簡単な質問に答えて、あなたのむくみ・脂肪のお悩みに最適なKALCALAの効果を発見してください。">
+    <title>お腹の脂肪対策タブレットPREMIUM - 大正製薬</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1 class="logo">KALCALA</h1>
-            <p class="subtitle">あなたの理想のボディを叶える</p>
-        </header>
+    <header class="header">
+        <div class="container">
+            <img src="https://via.placeholder.com/200x60/0066CC/FFFFFF?text=大正製薬" alt="大正製薬" class="logo">
+        </div>
+    </header>
 
-        <main class="main">
-            <div class="intro-section" id="intro">
-                <div class="chat-bubble bot-message">
-                    <div class="message-content">
-                        <h2>あなたのむくみ・脂肪のお悩みは？</h2>
-                        <p>簡単な質問に答えて、あなたにぴったりの商品を見つけましょう！</p>
-                    </div>
-                </div>
-                <button class="start-button" onclick="startSurvey()">アンケートを始める</button>
-            </div>
-
-            <div class="survey-section" id="survey" style="display: none;">
-                <div class="question-container" id="question-container">
-                </div>
-            </div>
-
-            <div class="result-section" id="result" style="display: none;">
-                <div class="chat-bubble bot-message">
-                    <div class="result-content" id="result-content">
-                    </div>
-                </div>
-
-                <div class="product-info">
-                    <div class="product-image">
-                        <img src="kalcala-package.jpg" alt="KALCALA商品" id="product-img">
-                    </div>
-                    <div class="product-details">
-                        <h3>KALCALA</h3>
-                        <div class="price-info">
-                            <div class="special-price">
-                                <span class="price-label">初回定期価格</span>
-                                <span class="price">1,980円</span>
-                                <span class="tax">(税込)</span>
-                            </div>
-                            <div class="regular-price">通常価格 4,980円</div>
-                            <div class="discount">2回目以降も20%OFF</div>
-                        </div>
-                        <div class="benefits">
-                            <ul>
-                                <li>✓ 送料無料</li>
-                                <li>✓ 全額返金保証</li>
-                                <li>✓ 休止・解約いつでもOK</li>
-                            </ul>
-                        </div>
-                        <div class="authority">
-                            <div class="doctor-recommend">
-                                <span>医師推奨</span>
-                            </div>
-                            <div class="ranking">
-                                <span>ランキング1位</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cta-section">
-                    <button class="cta-button" onclick="goToPurchase()">
-                        今すぐお得に始める！
+    <main>
+        <!-- ファーストビューセクション -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">
+                    あなたの健康状態、本当に大丈夫ですか？<br>
+                    <span class="highlight">科学的根拠に基づいた</span>最適な解決策を見つけましょう
+                </h1>
+                <p class="hero-subtitle">
+                    年齢とともに変化する体型や健康状態。一人ひとりのお悩みに合わせた、<br>
+                    確かな効果が期待できる解決策をご提案いたします。
+                </p>
+                <div class="cta-box">
+                    <h2 class="cta-title">あなたの健康習慣をチェック！</h2>
+                    <p class="cta-subtitle">まずは簡単なアンケートにお答えください</p>
+                    <button class="cta-button" onclick="scrollToSurvey()">
+                        無料診断を始める
                     </button>
-                    <p class="cta-note">※いつでも休止・解約可能です</p>
                 </div>
             </div>
-        </main>
+        </section>
 
-        <footer class="footer">
-            <p>&copy; 2024 KALCALA. All rights reserved.</p>
-        </footer>
-    </div>
+        <!-- アンケートセクション -->
+        <section class="survey-section" id="survey">
+            <div class="container">
+                <h2 class="section-title">健康診断アンケート</h2>
+                <p class="section-subtitle">
+                    あなたの現在の健康状態や生活習慣について教えてください。<br>
+                    科学的なデータに基づいて、最適な健康サポート方法をご提案いたします。
+                </p>
+
+                <form id="surveyForm" class="survey-form">
+                    <!-- 設問1 -->
+                    <div class="question-block">
+                        <h3 class="question-title">設問1</h3>
+                        <p class="question-text">
+                            最近、ご自身の健康状態や体型について、特にどのような点にお悩みですか？（複数選択可）
+                        </p>
+                        <p class="question-description">
+                            年齢を重ねると、多くの方が体型や健康状態の変化を実感されています。<br>
+                            あなたが最も気になる点をお聞かせください。
+                        </p>
+                        <div class="options-group">
+                            <label class="option">
+                                <input type="checkbox" name="q1" value="weight_gain">
+                                <span class="checkmark"></span>
+                                以前より体重が増加し、元に戻りにくい
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q1" value="belly_fat">
+                                <span class="checkmark"></span>
+                                お腹周りに脂肪がつき、体型が変化してきた
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q1" value="metabolic_syndrome">
+                                <span class="checkmark"></span>
+                                健康診断でメタボリックシンドローム予備軍と指摘された
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q1" value="food_guilt">
+                                <span class="checkmark"></span>
+                                食事を気にせず楽しむことに罪悪感がある
+                            </label>
+                            <label class="option">
+                                <input type="checkbox" name="q1" value="slow_metabolism">
+                                <span class="checkmark"></span>
+                                年齢とともに代謝が落ちたと感じる
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 設問2 -->
+                    <div class="question-block">
+                        <h3 class="question-title">設問2</h3>
+                        <p class="question-text">
+                            日々の食事で、特に気になる栄養素はどちらですか？
+                        </p>
+                        <p class="question-description">
+                            食事から摂取する栄養素のバランスは、健康維持に重要な要素です。<br>
+                            あなたが特に意識している栄養素を教えてください。
+                        </p>
+                        <div class="options-group">
+                            <label class="option">
+                                <input type="radio" name="q2" value="carbs">
+                                <span class="radiomark"></span>
+                                糖質（ごはん、パン、麺類など）
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="fats">
+                                <span class="radiomark"></span>
+                                脂質（揚げ物、肉の脂身など）
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="both">
+                                <span class="radiomark"></span>
+                                どちらも同じくらい気になる
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="none">
+                                <span class="radiomark"></span>
+                                特に意識していない
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 設問3 -->
+                    <div class="question-block">
+                        <h3 class="question-title">設問3</h3>
+                        <p class="question-text">
+                            健康維持のために、現在取り組んでいらっしゃることはありますか？
+                        </p>
+                        <p class="question-description">
+                            継続的な健康管理は、将来の健康状態に大きく影響します。<br>
+                            現在の取り組み状況を教えてください。
+                        </p>
+                        <div class="options-group">
+                            <label class="option">
+                                <input type="radio" name="q3" value="diet_restriction">
+                                <span class="radiomark"></span>
+                                食事の量を減らす、特定の食品を避けるといった食事制限
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="exercise">
+                                <span class="radiomark"></span>
+                                定期的な運動（ウォーキング、ジョギング、筋トレなど）
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="nothing">
+                                <span class="radiomark"></span>
+                                特に何もしていない
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="supplements">
+                                <span class="radiomark"></span>
+                                機能性表示食品やサプリメントの摂取
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 設問4 -->
+                    <div class="question-block">
+                        <h3 class="question-title">設問4</h3>
+                        <p class="question-text">
+                            健康食品やサプリメントを選ぶ際、最も重要視される要素は何ですか？
+                        </p>
+                        <p class="question-description">
+                            信頼できる健康食品選びは、効果的な健康管理の第一歩です。<br>
+                            あなたが最も重視するポイントをお聞かせください。
+                        </p>
+                        <div class="options-group">
+                            <label class="option">
+                                <input type="radio" name="q4" value="scientific_evidence">
+                                <span class="radiomark"></span>
+                                科学的根拠に基づいた有効性
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="trusted_brand">
+                                <span class="radiomark"></span>
+                                信頼できるメーカーであること
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="safety">
+                                <span class="radiomark"></span>
+                                安全な製造管理体制
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="price">
+                                <span class="radiomark"></span>
+                                価格とコストパフォーマンス
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="submit-section">
+                        <button type="submit" class="submit-button">
+                            診断結果を見る
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 診断結果セクション -->
+        <section class="results-section" id="results" style="display: none;">
+            <div class="container">
+                <h2 class="section-title">あなたのお悩みに合わせた解決策</h2>
+                <div class="result-content">
+                    <div class="result-message">
+                        <h3 class="result-title">診断結果</h3>
+                        <p id="resultText" class="result-text"></p>
+                    </div>
+                    <div class="recommendation">
+                        <h3 class="recommendation-title">
+                            特に<span class="highlight">「お腹の脂肪」や「食事の糖・脂肪」</span>にお悩みの方へ
+                        </h3>
+                        <p class="recommendation-text">
+                            科学的根拠に基づいた機能性表示食品で、あなたの健康管理をサポートします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 商品訴求セクション -->
+        <section class="product-section">
+            <div class="container">
+                <div class="product-header">
+                    <h2 class="product-title">
+                        大正製薬の<br>
+                        <span class="product-name">おなかの脂肪対策タブレットPREMIUM</span>
+                    </h2>
+                    <p class="product-subtitle">
+                        100年以上の歴史を持つ大正製薬が、科学的根拠に基づいて開発した機能性表示食品
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://via.placeholder.com/80x80/FF6B6B/FFFFFF?text=W" alt="ダブル機能">
+                        </div>
+                        <h3 class="feature-title">ダブルの機能性</h3>
+                        <p class="feature-description">
+                            <strong>お腹の脂肪を減らすのを助ける</strong><br>
+                            （葛の花由来イソフラボン）<br><br>
+                            <strong>食事の糖・脂肪の吸収を抑える</strong><br>
+                            （ターミナリアベリリカ由来没食子酸）
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://via.placeholder.com/80x80/4ECDC4/FFFFFF?text=信頼" alt="信頼性">
+                        </div>
+                        <h3 class="feature-title">圧倒的な信頼性</h3>
+                        <p class="feature-description">
+                            <strong>大正製薬</strong>ブランドの安心感<br>
+                            <strong>機能性表示食品</strong>として科学的根拠を確認<br>
+                            <strong>日本国内生産</strong>で品質管理を徹底
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="https://via.placeholder.com/80x80/45B7D1/FFFFFF?text=実績" alt="実績">
+                        </div>
+                        <h3 class="feature-title">確かな実績</h3>
+                        <p class="feature-description">
+                            <strong>シリーズ累計</strong><br>
+                            <span class="big-number">1,400万袋</span><br>
+                            <strong>突破</strong><br>
+                            多くのお客様に選ばれ続ける信頼の証
+                        </p>
+                    </div>
+                </div>
+
+                <div class="scientific-evidence">
+                    <h3 class="evidence-title">科学的根拠に基づいた効果</h3>
+                    <div class="evidence-grid">
+                        <div class="evidence-item">
+                            <h4>葛の花由来イソフラボン</h4>
+                            <p>お腹の脂肪（内臓脂肪と皮下脂肪）を減らすのを助ける機能が報告されています。</p>
+                        </div>
+                        <div class="evidence-item">
+                            <h4>ターミナリアベリリカ由来没食子酸</h4>
+                            <p>食事の糖や脂肪の吸収を抑える機能が報告されています。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- オファー・クロージングセクション -->
+        <section class="offer-section">
+            <div class="container">
+                <div class="offer-header">
+                    <h2 class="offer-title">特別価格でお試しください</h2>
+                    <p class="offer-subtitle">初回限定特別価格で、安心して始められます</p>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="price-section">
+                        <div class="original-price">
+                            <span class="price-label">通常価格</span>
+                            <span class="price-value">4,320円（税込）</span>
+                        </div>
+                        <div class="special-price">
+                            <span class="price-label">初回限定価格</span>
+                            <span class="price-value">980円<span class="tax">(税込)</span></span>
+                            <span class="discount">77%OFF</span>
+                        </div>
+                    </div>
+
+                    <div class="benefits">
+                        <h3 class="benefits-title">毎月らくとく定期コースの特典</h3>
+                        <ul class="benefits-list">
+                            <li>✓ 初回限定価格 980円（税込）</li>
+                            <li>✓ 2回目以降も15%OFF 3,672円（税込）</li>
+                            <li>✓ 送料無料</li>
+                            <li>✓ 回数縛りなし（いつでも解約可能）</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-section">
+                        <button class="main-cta-button">
+                            今すぐ特別価格で始める
+                        </button>
+                        <p class="cta-note">
+                            ※回数縛りなしで安心してお試しいただけます
+                        </p>
+                    </div>
+                </div>
+
+                <div class="guarantee">
+                    <h3 class="guarantee-title">安心保証</h3>
+                    <p class="guarantee-text">
+                        大正製薬の品質管理のもと、安心・安全な製品をお届けします。<br>
+                        定期コースはいつでもお休み・解約が可能です。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                &copy; 2024 大正製薬株式会社. All rights reserved.<br>
+                本品は、疾病の診断、治療、予防を目的としたものではありません。
+            </p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
