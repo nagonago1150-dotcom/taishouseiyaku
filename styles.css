@@ -39,35 +39,24 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: #1e3a8a;
-    text-decoration: none;
+    justify-content: center;
     transition: all 0.3s ease;
 }
 
-.logo-icon {
-    font-size: 2.2rem;
-    background: linear-gradient(135deg, #3b82f6, #1e40af);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
-}
-
-.logo-text {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: 0.05em;
+.logo-image {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
 }
 
 .logo-container:hover {
     transform: translateY(-2px);
-    filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.2));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.logo-container:hover .logo-image {
+    transform: scale(1.05);
 }
 
 /* 質問画面の共通スタイル */
@@ -124,7 +113,7 @@ body {
 
 /* ヘッドライン（画面1のみ） */
 .headline {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     position: relative;
     z-index: 1;
 }
@@ -137,6 +126,28 @@ body {
     letter-spacing: 0.02em;
     color: #1e3a8a;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 商品画像 */
+.product-image-container {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.product-image {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.product-image:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
 }
 
 /* 質問コンテナ */
@@ -310,6 +321,11 @@ body {
     
     .headline h1 {
         font-size: 2.2rem;
+    }
+    
+    .product-image {
+        max-width: 350px;
+        border-radius: 10px;
     }
     
     .question-container {
