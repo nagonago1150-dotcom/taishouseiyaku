@@ -128,6 +128,11 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* デスクトップ版では改行を非表示 */
+.sp-only {
+    display: none;
+}
+
 /* 商品画像 */
 .product-image-container {
     text-align: center;
@@ -319,8 +324,19 @@ body {
         padding: 40px 0;
     }
     
+    .headline {
+        margin-bottom: 30px;
+    }
+    
     .headline h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
+        line-height: 1.4;
+        text-align: center;
+    }
+    
+    /* スマホ版では改行を表示 */
+    .sp-only {
+        display: inline;
     }
     
     .product-image {
@@ -351,6 +367,23 @@ body {
     
     .loading-text {
         font-size: 1.3rem;
+    }
+}
+
+/* より小さいスマホ画面向け */
+@media (max-width: 480px) {
+    .headline h1 {
+        font-size: 2.0rem;
+        line-height: 1.5;
+    }
+    
+    .product-image {
+        max-width: 300px;
+    }
+    
+    .question-container {
+        padding: 30px 20px;
+        margin: 15px 5px;
     }
 }
 
