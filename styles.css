@@ -9,7 +9,7 @@ body {
     line-height: 1.65;
     color: #1a1d29;
     background: 
-        linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.85)),
+        linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.92)),
         url('images/taisho_2gokan.jpg');
     background-size: cover;
     background-position: center center;
