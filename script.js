@@ -7,17 +7,12 @@ let answers = [];
 function nextQuestion(screenNumber) {
     // 現在のアクティブ画面を非表示
     const currentScreen = document.querySelector('.question-screen.active, .loading-screen.active');
-    if (currentScreen) {
-        currentScreen.classList.remove('active');
-    }
-    
-    // 次の画面を表示
     const nextScreen = document.getElementById(`screen${screenNumber}`);
-    if (nextScreen) {
-        // スムーズな切り替えのため少し遅延
-        setTimeout(() => {
-            nextScreen.classList.add('active');
-        }, 300);
+    
+    if (currentScreen && nextScreen) {
+        // 即座に切り替え
+        currentScreen.classList.remove('active');
+        nextScreen.classList.add('active');
     }
 }
 
@@ -25,20 +20,18 @@ function nextQuestion(screenNumber) {
 function showLoading() {
     // 現在の画面を非表示
     const currentScreen = document.querySelector('.question-screen.active');
-    if (currentScreen) {
-        currentScreen.classList.remove('active');
-    }
+    const loadingScreen = document.getElementById('loadingScreen');
     
-    // ローディング画面を表示
-    setTimeout(() => {
-        const loadingScreen = document.getElementById('loadingScreen');
+    if (currentScreen && loadingScreen) {
+        // 即座に切り替え
+        currentScreen.classList.remove('active');
         loadingScreen.classList.add('active');
         
         // 2秒後に大正製薬の公式販売LPにリダイレクト
         setTimeout(() => {
             window.location.href = 'https://www.taisho-direct.jp/simages/lp/KTP_con_af.html';
         }, 2000);
-    }, 300);
+    }
 }
 
 // ページ読み込み時の初期化
